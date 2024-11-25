@@ -1,6 +1,4 @@
-// Wait for AI capabilities before setting up
 chrome.runtime.onInstalled.addListener(() => {
-    // Check if AI is available before setting up context menu
     if (chrome.contextMenus) {
       chrome.contextMenus.create({
         id: 'proofread-text',
@@ -9,7 +7,6 @@ chrome.runtime.onInstalled.addListener(() => {
       });
     }
   });
-  // Only add click listener if contextMenus exist
   if (chrome.contextMenus && chrome.contextMenus.onClicked) {
     chrome.contextMenus.onClicked.addListener((info, tab) => {
       if (info.menuItemId === 'proofread-text') {

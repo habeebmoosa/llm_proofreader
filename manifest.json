@@ -1,8 +1,8 @@
 {
     "manifest_version": 3,
-    "name": "AI Proofreader",
+    "name": "LLM Proof Reader",
     "version": "1.0",
-    "description": "Proofread content using Chrome's built-in AI",
+    "description": "Proofread LLM generated content",
     "permissions": [
         "activeTab",
         "scripting"
