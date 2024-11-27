@@ -2,18 +2,32 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>AI Proofreader</title>
+  <title>LLM Proof Reader - Proof reads LLM generated content</title>
   <link rel="stylesheet" href="styles.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="libs/showdown.min.js"></script>
 </head>
 <body>
-    <div class="container">
-      <h1>AI Proofreading Assistant</h1>
-      <textarea id="proofreading-input" placeholder="Paste your text here for comprehensive proofreading"></textarea>
-      <button id="proofread-btn">Analyze Writing</button>
-      <div id="suggestions-output" class="markdown-body"></div>
+  <div class="popup-container">
+    <h1 class="popup-title">LLM Proof Reader</h1>
+    <div class="tile-container">
+      <label class="tile">
+        <input type="checkbox" class="tile-checkbox" id="grammer" />
+        <p>Grammer</p>
+      </label>
+      <label class="tile">
+        <input type="checkbox" class="tile-checkbox" id="clarity" />
+        <p>Clarity</p>
+      </label>
+      <label class="tile">
+        <input type="checkbox" class="tile-checkbox" id="spell" />
+        <p>Spell Check</p>
+      </label>
     </div>
-    <script src="popup.js"></script>
+    <textarea id="proofreading-input" placeholder="Enter your text here"></textarea>
+    <button id="proofread-btn" class="btn">Proofread</button>
+    <div id="suggestions-output" class="suggestions-output markdown-body"></div>
+  </div>
+  <script src="popup.js"></script>
 </body>
 </html>

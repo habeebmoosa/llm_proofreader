@@ -1,3 +1,5 @@
+// popup.js
+
 document.addEventListener('DOMContentLoaded', async () => {
     const proofreadBtn = document.getElementById('proofread-btn');
     const input = document.getElementById('proofreading-input');

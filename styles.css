@@ -1,46 +1,175 @@
+/* Body Styling */
 body {
-    width: 400px;
-    padding: 10px;
-    font-family: Arial, sans-serif;
-  }
-  
-  #proofreading-input {
-    width: 100%;
-    height: 150px;
-    margin-bottom: 10px;
-    resize: vertical;
-  }
-  
-  #suggestions-output {
-    border: 1px solid #ddd;
-    padding: 10px;
-    margin-bottom: 10px;
-    min-height: 100px;
-  }
-  
-  #proofread-btn {
-    width: 100%;
-    padding: 10px;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    cursor: pointer;
-  }
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', sans-serif;
+  background-color: #111;
+  color: #E4E4E4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
 
+/* Popup Container */
+.popup-container {
+  width: 380px;
+  background-color: #1B1B1B;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  transition: all 0.3s ease;
+}
+
+/* Title */
+.popup-title {
+  font-size: 24px;
+  font-weight: 600;
+  color: #FFFFFF;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+
+.popup-title {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* Tile container styles */
+.tile-container {
+  display: flex;
+  justify-content: space-evenly;
+  margin-bottom: 20px;
+}
+
+/* Individual tile styles */
+.tile {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 15px 20px;
+  background-color: #e0e0e0;
+  border-radius: 10px;
+  border: 2px solid transparent; /* Initially, the border is transparent */
+  cursor: pointer;
+  transition: border 0.3s, background-color 0.3s; /* Add transition for smooth effects */
+}
+
+.tile p {
+  font-size: 16px;
+  color: #333;
+  margin: 0;
+}
+
+/* Hide the checkbox input */
+.tile-checkbox {
+  position: absolute;
+  opacity: 0;
+  z-index: -1;
+}
+
+/* When the checkbox is checked, change the border color */
+.tile-checkbox:checked + p {
+  color: #ff6f61; /* Change the text color when selected */
+}
+
+/* Change border color when the checkbox is selected */
+.tile-checkbox:checked ~ .tile {
+  border-color: #ff6f61; /* Set border color to red when the tile is checked */
+}
+
+/* Hover effect */
+.tile:hover {
+  background-color: #d1d1d1;
+}
+
+
+/* Textarea Styling */
+#proofreading-input {
+  width: auto;
+  height: 150px;
+  background-color: #2E2E2E;
+  color: #E4E4E4;
+  border: 1px solid #4E4E4E;
+  border-radius: 8px;
+  padding: 12px;
+  resize: vertical;
+  font-size: 14px;
+  line-height: 1.5;
+  transition: all 0.3s ease;
+}
+
+#proofreading-input:focus {
+  border-color: #4CAF50;
+  outline: none;
+  box-shadow: 0 0 4px rgba(76, 175, 80, 0.6);
+}
+
+/* Button Styling */
+#proofread-btn {
+  width: 100%;
+  padding: 12px;
+  background-color: #4CAF50;
+  color: #FFFFFF;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+#proofread-btn:hover {
+  background-color: #45A049;
+}
+
+#proofread-btn:focus {
+  outline: none;
+  box-shadow: 0 0 4px rgba(76, 175, 80, 0.6);
+}
+
+/* Suggestions Output */
+.suggestions-output {
+  background-color: #2E2E2E;
+  color: #E4E4E4;
+  border-radius: 8px;
+  padding: 12px;
+  font-size: 14px;
+  overflow-y: auto;
+  min-height: 100px;
+  max-height: 300px;
+}
 
 .markdown-body h1, .markdown-body h2, .markdown-body h3 {
-    margin: 10px 0;
-    font-weight: bold;
+  margin: 10px 0;
+  font-weight: 600;
+  color: #4CAF50;
 }
 
 .markdown-body ul {
-    padding-left: 20px;
+  padding-left: 20px;
 }
 
 .markdown-body li {
-    margin-bottom: 5px;
+  margin-bottom: 5px;
 }
 
 .markdown-body p {
-    margin: 10px 0;
+  margin: 10px 0;
+  font-size: 15px;
+  line-height: 1.6;
 }
+
+/* Smooth hover and focus effects */
+.popup-container:hover,
+#proofreading-input:focus,
+#proofread-btn:hover {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+
