@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', async () => {
             - Provide suggestions for improving clarity, grammar, and overall quality.
             - Indicate whether the tone and style are appropriate for the intended audience (if provided).
 
-            Provide your feedback in very short way.
+            Provide your feedback in very short way return only 3 to 4 small points at all.
             `
         });
 
@@ -43,7 +43,6 @@ document.addEventListener('DOMContentLoaded', async () => {
                 let result = '';
                 let previousChunk = '';
                 const stream = session.promptStreaming(`
-                    Proofread the following text and use headings for each section (e.g., ## Grammatical Corrections) and bullet points for detailed suggestions.
                     "${text}"
                 `);
         

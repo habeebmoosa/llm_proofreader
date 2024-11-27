@@ -3,6 +3,10 @@
     "name": "LLM Proof Reader",
     "version": "1.0",
     "description": "Proofread LLM generated content",
+    "icons": {
+        "128": "images/proofread-128.png",
+        "16": "images/proofread-16.png"
+    },
     "permissions": [
         "activeTab",
         "scripting",
@@ -10,6 +14,9 @@
         "contextMenus",
         "storage"
     ],
+    "action" : {
+        "default_title" : "Click to open"
+    },
     "side_panel": {
       "default_path": "popup.html"
     },
