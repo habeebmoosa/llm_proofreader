@@ -2,28 +2,15 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>LLM Proof Reader - Proof reads LLM generated content</title>
+  <title>LLM Proof Reader - Proofreads LLM Generated Content</title>
   <link rel="stylesheet" href="styles.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="libs/showdown.min.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
 </head>
 <body>
-  <div class="popup-container">
+  <div class="popup-container" id="container">
     <h1 class="popup-title">LLM Proof Reader</h1>
-    <div class="tile-container">
-      <label class="tile">
-        <input type="checkbox" class="tile-checkbox" id="grammer" />
-        <p>Grammer</p>
-      </label>
-      <label class="tile">
-        <input type="checkbox" class="tile-checkbox" id="clarity" />
-        <p>Clarity</p>
-      </label>
-      <label class="tile">
-        <input type="checkbox" class="tile-checkbox" id="spell" />
-        <p>Spell Check</p>
-      </label>
-    </div>
     <textarea id="proofreading-input" placeholder="Enter your text here"></textarea>
     <button id="proofread-btn" class="btn">Proofread</button>
     <div id="suggestions-output" class="suggestions-output markdown-body"></div>

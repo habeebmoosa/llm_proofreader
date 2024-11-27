@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     const proofreadBtn = document.getElementById('proofread-btn');
     const input = document.getElementById('proofreading-input');
     const suggestionsOutput = document.getElementById('suggestions-output');
+    const container = document.getElementById('container')
     let session = null;
 
     try {
@@ -33,34 +34,44 @@ document.addEventListener('DOMContentLoaded', async () => {
         proofreadBtn.addEventListener('click', async () => {
             const text = input.value.trim();
             if (!text) return;
-
+        
+            // Start loading animation
+            input.classList.add('loading-effect');
             suggestionsOutput.innerHTML = 'Generating suggestions...';
-
+        
             try {
                 let result = '';
                 let previousChunk = '';
                 const stream = session.promptStreaming(`
-                    Proofread the following text and  Use headings for each section (e.g., ## Grammatical Corrections) and bullet points for detailed suggestions.
-                    
+                    Proofread the following text and use headings for each section (e.g., ## Grammatical Corrections) and bullet points for detailed suggestions.
                     "${text}"
                 `);
-
+        
                 for await (const chunk of stream) {
                     const newChunk = chunk.startsWith(previousChunk)
                         ? chunk.slice(previousChunk.length)
                         : chunk;
-
+        
                     result += newChunk;
                     previousChunk = chunk;
                 }
-
+        
                 const converter = new showdown.Converter();
                 const html = converter.makeHtml(result);
-
+        
                 suggestionsOutput.innerHTML = html;
-
+        
+                // Blow effect on completion
+                input.classList.remove('loading-effect');
+                container.classList.add('blow-effect');
+        
+                setTimeout(() => {
+                    container.classList.remove('blow-effect');
+                }, 600); // Match the blow-effect animation duration
+        
             } catch (error) {
                 suggestionsOutput.textContent = `Error: ${error.message}`;
+                input.classList.remove('loading-effect');
             }
         });
 
