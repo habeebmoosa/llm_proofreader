@@ -5,10 +5,13 @@
     "description": "Proofread LLM generated content",
     "permissions": [
         "activeTab",
-        "scripting"
+        "scripting",
+        "sidePanel",
+        "contextMenus",
+        "storage"
     ],
-    "action": {
-        "default_popup": "popup.html"
+    "side_panel": {
+      "default_path": "popup.html"
     },
     "background": {
         "service_worker": "background.js"
